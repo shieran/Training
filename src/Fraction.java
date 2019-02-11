@@ -8,25 +8,24 @@ public class Fraction implements Comparable <Fraction>{
     public Fraction(int numerator, int denumerator) {
         try {
             if (denumerator <= 0 || numerator <= 0) {
-                throw new LessThanZeroException("числитель или знаменатель дроби не должен быть равен 0, объект не может быть создан");
+                throw new LessThanZeroException("числитель или знаменатель дроби не должен быть меньше или равен 0, объект не может быть создан");
             }
+            this.numerator = numerator;
+            this.denumerator = denumerator;
         } catch (LessThanZeroException e) {
             e.printStackTrace();
         }
-        this.numerator = numerator;
-        this.denumerator = denumerator;
     }
 
     public Fraction(int numerator) {
         try {
             if (numerator <= 0) {
-                throw new LessThanZeroException("числитель дроби не должен быть равен 0, объект не может быть создан");
+                throw new LessThanZeroException("числитель дроби не должен быть меньше или равен 0, объект не может быть создан");
             }
+            this.numerator = numerator;
         } catch (LessThanZeroException e) {
             e.printStackTrace();
         }
-
-        this.numerator = numerator;
     }
 
     //свой метод сравнения дробей
